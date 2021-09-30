@@ -8,9 +8,9 @@ const changeBase = () => {
 
 // Task 2
 const sumAndQuotient = () => {
-    let first = prompt();
+    let first = prompt('Введите первое число');
     if (parseInt(first)) {
-        let  second = prompt();
+        let  second = prompt('Введите второе число');
         if (parseInt(second)) {
             console.log(Number(first) + Number(second), Number(first) / Number(second))
         } else {
