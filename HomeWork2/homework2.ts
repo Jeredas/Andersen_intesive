@@ -1,5 +1,3 @@
-// Task 3
-
 const myIterable = { 
     from: 1,
     to: 4,
@@ -13,9 +11,3 @@ const myIterable = {
         };
     },
 };
-
-for (let item of myIterable) {
-    console.log(item); // 1, 2, 3, 4
-   }
-
-   
