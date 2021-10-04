@@ -1,6 +1,6 @@
 const makeObjectDeepCopy = (targetObject) => {
     if (typeof targetObject !== 'object' || targetObject === null) {
-      return targetObject 
+      return targetObject;
     };
     let result = Array.isArray(targetObject) ? [] : {};
     for (let key in targetObject) {
