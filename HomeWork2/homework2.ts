@@ -6,7 +6,7 @@ const makeObjectDeepCopy = (targetObject) => {
     for (let key in targetObject) {
       let value = targetObject[key];
       result[key] = makeObjectDeepCopy(value);
-    }
+    };
     return result;
   }
 
