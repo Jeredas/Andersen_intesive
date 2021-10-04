@@ -13,10 +13,10 @@ const makeObjectDeepCopy = (targetObject) => {
 const selectFromInterval = (arr: number[], first: number, second: number) => {
    if(!Array.isArray(arr)) throw new TypeError('First argument should be an array');
    if(
-    arr.some((elem)=> elem !== +elem) ||
-    first !== +first ||
-    second !== +second
-     ) throw new TypeError('Array items should be numbers');
+    arr.some((elem)=> !Number.isInteger(elem)) ||
+    !Number.isInteger(first) ||
+    !Number.isInteger(second)
+     ) throw new TypeError('Only integers allowed');
     const interval = arr.filter((elem) => {
         if(first > second) {
             return elem <= first && elem >= second; 
