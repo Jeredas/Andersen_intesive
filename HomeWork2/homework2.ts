@@ -31,9 +31,8 @@ const myIterable = {
     from: 1,
     to: 4,
     [Symbol.iterator]: function *() {
-        if(
-            isNaN(this.from) || !Number.isInteger(this.from) ||
-            isNaN(this.to) || !Number.isInteger(this.to)
+        if( !Number.isInteger(this.from) ||
+            !Number.isInteger(this.to)
         ) throw new TypeError('Only integers allowed');
         if(this.from > this.to) throw new RangeError('"From" can\'t be bigger than "to"');
         for(let i = this.from; i <= this.to; i++){
