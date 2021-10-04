@@ -11,6 +11,7 @@ const makeObjectDeepCopy = (targetObject) => {
   }
 
 const selectFromInterval = (arr: number[], first: number, second: number) => {
+   if(!Array.isArray(arr)) throw new TypeError('First argument should be an array');
    if(
     arr.some((elem)=> elem !== +elem) ||
     first !== +first ||
