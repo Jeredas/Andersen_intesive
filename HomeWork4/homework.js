@@ -1,33 +1,57 @@
 const concatStrings = (string, separator) => {
-    !separator ? separator = '': separator;
+    if(!separator || separator === null || separator !== `${separator}`) separator = '';
     if(string || string !== null || string === `${string}`) {
         return (secondString) => {
-            if(secondString === null){
+            if(secondString !== `${secondString}` || secondString === null){
                 return string
             } else {
-                console.log(secondString)
             return concatStrings(string + separator + secondString, separator)
             }
         }
-    } 
-} 
-//  console.log(concatStrings('first')('second')('third')())
-//  //console.log('firstsecondthird')
-//  console.log(concatStrings('first', null)('second')())
-//  //console.log('firstsecond'
- //console.log(concatStrings('first', '123')('second')('third')())
-//  //console.log('first123second123third'
- console.log((concatStrings('123')('')('')(null)).length)
-//  //console.log('some-value'
-//  console.log(concatStrings('some-value')(2)())
-//  //console.log('some-value'
-//  console.log(concatStrings('some-value')('333')(123n)())
-//  //console.log('some-val333'
+    } else if (typeof string === 'undefined' ) {
+        return
+    };
+};
 
-// function addit (a) {
-//     return function (b) {
-//         b ? addit(a+b) : a
-//         if(!b || b)
-//     }
-// }
-// console.log(addit('some-value')('')('')(null)())
+class Calculator {
+    constructor(x,y){
+        if(!Number.isSafeInteger(x) || !Number.isSafeInteger(y)) {
+            throw new TypeError('Arguments should be integers');
+        };
+        if(!x || !y) {
+            throw new Error('It should be to arguments');
+        };
+        this.x = x;
+        this.y = y;
+        this.logMul = this.logMul.bind(this);
+        this.logSub = this.logSub.bind(this);
+        this.logSum = this.logSum.bind(this);
+        this.logDiv = this.logDiv.bind(this);
+    };
+    setX(value) {
+        if(Number.isSafeInteger(value)){
+            this.x = value
+        } else {
+            throw new TypeError('Value should be safe integer');
+        };
+    };
+    setY(value) {
+        if(Number.isSafeInteger(value)) {
+            this.y = value
+        } else {
+            throw new TypeError('Value should be safe integer');
+        };
+    };
+    logSum() {
+        console.log(this.x + this.y);
+    };
+    logMul() {
+        console.log(this.x * this.y);
+    };
+    logSub() {
+        console.log(this.x - this.y);
+    };
+    logDiv() {
+        console.log(this.x / this.y);
+    };
+};
