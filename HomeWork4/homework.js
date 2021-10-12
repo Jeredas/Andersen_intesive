@@ -10,8 +10,6 @@ const concatStrings = (string, separator) => {
         }
     }
 };
-console.log(concatStrings('2')('second')('third')()
-)
 
 class Calculator {
     constructor(x,y){
