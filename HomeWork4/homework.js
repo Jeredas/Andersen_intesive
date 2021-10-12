@@ -1,6 +1,6 @@
 const concatStrings = (string, separator) => {
     if(!separator || separator === null || separator !== `${separator}`) separator = '';
-    if(string || string !== null || string === `${string}`) {
+    if(string && string !== null && string === `${string}` &&  string !== undefined) {
         return (secondString) => {
             if(secondString !== `${secondString}` || secondString === null){
                 return string
@@ -8,10 +8,10 @@ const concatStrings = (string, separator) => {
             return concatStrings(string + separator + secondString, separator)
             }
         }
-    } else if (typeof string === 'undefined' ) {
-        return
-    };
+    }
 };
+console.log(concatStrings('2')('second')('third')()
+)
 
 class Calculator {
     constructor(x,y){
