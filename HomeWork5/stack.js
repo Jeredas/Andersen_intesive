@@ -18,13 +18,13 @@ class Stack {
         console.log(elem)
         if (this.top === null) {
             this.top = { value: elem, next: null };
-            this.size += 1;
+            this.size++;
         } else {
             if(this.size + 1 > this.elemsCount){
                 throw new RangeError('Stack overflow');
             } else {
             this.top = { value: elem, next: this.top };
-            this.size += 1;
+            this.size++;
             };
         };
     };
@@ -45,8 +45,7 @@ class Stack {
         } else {
             this.top = { value: this.top.next.value, next: this.top.next.next };
             this.size--;
-        }
-
+        };
     };
     isEmpty() {
         return this.top === null;
@@ -60,7 +59,7 @@ class Stack {
         };
         if(stackTop.next === null){
             resultArr.push(stackTop.value);
-        }
+        };
         return resultArr;
     };
     static fromIterable(iterable) {
@@ -68,57 +67,10 @@ class Stack {
             const stack = new Stack(Array.from(iterable).length);
            Array.from(iterable).forEach((elem) => {
                 stack.push(elem);
-            })
+            });
             return stack;
         } else {
             throw new TypeError('Value is not iterable');
-        }
-
+        };
     };
 };
-
-const stack = new Stack(20);
-stack.push(123);
-stack.peek()
-console.log(stack.toArray())
-stack.push('astas');
-stack.push('11111');
-stack.push('11111');
-stack.push('11111');
-stack.push('11111');
-stack.push('11111');
-// stack.push('11111');
-// stack.push('11111');
-// stack.push('11111');
-// stack.push('11111');
-// stack.push('11111');
-console.log(stack.peek())
-stack.push(99999);
-console.log(stack.toArray())
-const ll = new Stack(1);
-ll.push('111');
-ll.peek();
-ll.push('22')
-// stack.pop();
-//console.log(stack.toArray())
-// console.log(stack.isEmpty());
-// const aaa = Stack.fromIterable([{ a: 1 }, { a: 2 }, { a: 3 }, { a: 4 }, { a: 5 }, { a: 6 }])
-// aaa.peek()
-// console.log(aaa.toArray())
-// aaa.pop();
-// console.log(aaa.toArray())
-//aaa.push({ a: 7 })
-// console.log(aaa.peek());
-// /console.log(aaa.toArray())
-// const ourMap = new Map([
-//     [1, 'a'],
-//     [2, 'b'],
-//     [3, 'c'],
-// ]);
-// const bb = Stack.fromIterable(ourMap);
-// console.log(bb.getSize());
-// bb.pop()
-// bb.pop()
-// bb.pop()
-// console.log(bb.getSize());
-
