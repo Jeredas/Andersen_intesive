@@ -2,7 +2,7 @@ class LinkedList {
     constructor() {
         this.first = null;
         this.last = null;
-    }
+    };
     append(elem) {
         const node = { value: elem, next: null };
         if (this.last !== null) {
@@ -28,7 +28,7 @@ class LinkedList {
         while (current !== null) {
             if (elem === current.value) return elem;
             current = current.next;
-        }
+        };
         return null;
     };
     toArray() {
@@ -52,3 +52,5 @@ class LinkedList {
         };
     };
 };
+
+module.exports = { LinkedList };
