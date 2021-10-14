@@ -2,10 +2,11 @@ class Stack {
     constructor(elemsCount) {
         this.top = null;
         this.size = 0;
-        elemsCount ? this.elemsCount = elemsCount : this.elemsCount = 10;
-        if (elemsCount < 1) {
+        elemsCount === undefined ? this. elemsCount = 10 :
+        this.elemsCount = elemsCount;
+        if (this.elemsCount < 1) {
             throw new RangeError('Value can\'t be less than 1');
-        } else if (!Number.isSafeInteger(elemsCount)) {
+        } else if (!Number.isSafeInteger(this.elemsCount)) {
             throw new TypeError('Value should be safe integer');
         };
     }
