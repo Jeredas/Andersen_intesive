@@ -8,8 +8,6 @@ class Stack {
         } else if (!Number.isSafeInteger(elemsCount)) {
             throw new TypeError('Value should be safe integer');
         };
-        this.toArray = this.toArray.bind(this);
-        this.push = this.push.bind(this);
     }
     push(elem) {
         if (this.top === null) {
@@ -70,5 +68,10 @@ class Stack {
         };
     };
 };
-
+const stack = new Stack(6);
+stack.push(1);
+stack.push(1);
+stack.push(1);
+stack.push(1);
+console.log(stack.toArray());
 module.exports = { Stack };
