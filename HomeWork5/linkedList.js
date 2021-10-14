@@ -52,16 +52,3 @@ class LinkedList {
         };
     };
 };
-const myIterable = {
-    from: 1,
-    to: 6,
-    [Symbol.iterator]: function* () {
-        if (!Number.isInteger(this.from) ||
-            !Number.isInteger(this.to)
-        ) throw new TypeError('Only integers allowed');
-        if (this.from > this.to) throw new RangeError('"From" can\'t be bigger than "to"');
-        for (let i = this.from; i <= this.to; i++) {
-            yield i;
-        };
-    },
-};
