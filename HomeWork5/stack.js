@@ -68,10 +68,5 @@ class Stack {
         };
     };
 };
-const stack = new Stack(6);
-stack.push(1);
-stack.push(1);
-stack.push(1);
-stack.push(1);
-console.log(stack.toArray());
+
 module.exports = { Stack };
