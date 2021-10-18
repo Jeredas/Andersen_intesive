@@ -1,4 +1,4 @@
- class Car {
+class Car {
     #brand;
     #model;
     #yearOfManufacturing;
@@ -9,8 +9,6 @@
     #isStarted = false;
     #mileage = 0;
 
-    constructor() {
-    }
     set brand(brandName) {
         if (brandName === `${brandName}` || brandName.length > 1 || brandName < 50) {
             this.#brand = brandName
@@ -22,7 +20,7 @@
         return this.#brand;
     };
     set model(modelName) {
-        if (modelName === `${modelName}`|| modelName.length > 1 || modelName < 50) {
+        if (modelName === `${modelName}` || modelName.length > 1 || modelName < 50) {
             this.#model = modelName;
         } else {
             throw new TypeError('Model name should be a string')
@@ -77,10 +75,9 @@
     get milege() {
         return this.#mileage;
     };
-    get isStarted(){
+    get isStarted() {
         return this.#isStarted;
-    }
-
+    };
     start() {
         if (this.isStarted) throw new Error('Engine is already started');
         this.#isStarted = true;
